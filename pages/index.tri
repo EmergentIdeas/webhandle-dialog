@@ -1,0 +1,48 @@
+__::start__
+<div>
+	<button id="open-form">Open Form</button>	
+</div>
+
+<script type="module">
+	import {Dialog, FormAnswerDialog} from "@webhandle/dialog"
+
+	window.Dialog = Dialog
+	
+	let dialog = new Dialog({
+		body: '<p>This is my message.</p>'
+		, title: 'A test'
+		, styles: {
+			minWidth: "500px"
+			, minHeight: "500px"
+		}
+		, events: {
+			"click p": () => {
+				console.log('p click')
+				let diag2 = new Dialog({
+					body: '<p>The second</p>'
+					, showCancelButton: false
+				})
+				diag2.open()
+			}
+		}
+	})
+	await dialog.open()
+	console.log('dialog closed')
+	window.dialog = dialog
+	
+	let formButton = document.querySelector('#open-form')
+	formButton.addEventListener('click', async (evt) => {
+		
+		let diag3 = new FormAnswerDialog({
+			data: {
+				name: 'Dan'
+			}
+			, title: 'Edit User Information'
+			, body: '<form><input type="text" name="name" /></form>'
+		})
+		console.log(await diag3.open())
+		
+
+	})
+</script>
+__::end__

@@ -1,0 +1,33 @@
+{
+  "name": "@webhandle/dialog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client-lib/index.mjs",
+  "scripts": {
+    "test": "run-webhandle ./test/test-server.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmergentIdeas/webhandle-dialog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/EmergentIdeas/webhandle-dialog/issues"
+  },
+  "homepage": "https://github.com/EmergentIdeas/webhandle-dialog#readme",
+  "dependencies": {
+    "@webhandle/backbone-view": "^1.0.4",
+    "@webhandle/gather-form-data": "^1.0.0",
+    "@webhandle/initialize-webhandle-component": "^1.0.2",
+    "form-value-injector": "^1.0.6"
+  }
+  , "files": [
+	"client-lib"
+	, "README.md"
+	, "public"
+	, "initialize-webhandle-component.mjs"
+  ]
+}
