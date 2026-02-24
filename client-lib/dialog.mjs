@@ -13,10 +13,12 @@ let defaultStyles = {
 	, "position": "relative"
 	, "min-width": "300px"
 	, "min-height": "300px"
+	, "display": "flex"
+	, "align-items": "stretch"
 }
 
 export class Dialog extends View {
-	pre = '<div style="position: absolute; inset: 20px; display: grid; grid-template-rows: auto 1fr auto; row-gap: 20px;">'
+	pre = '<div style="display: grid; width: 100%; grid-template-rows: auto 1fr auto; row-gap: 20px;">'
 	post = "</div>"
 	constructor(options) {
 		super(Object.assign({}, defaultOptions, options))
@@ -36,7 +38,7 @@ export class Dialog extends View {
 
 	async render() {
 		let top = await this.resolveItem(this.top)
-		let body = '<div class="body">' + (await this.resolveItem(this.body)) + '</div>'
+		let body = '<div class="body" style="overflow: auto;">' + (await this.resolveItem(this.body)) + '</div>'
 		let footer = await this.resolveItem(this.footer)
 
 		this.el.insertAdjacentHTML('beforeend', this.pre + top + body + footer + this.post);
@@ -106,7 +108,7 @@ export class Dialog extends View {
 	top() {
 		return `<div class="title-bar" style="display: grid; grid-template-columns: 1fr auto;">
 	<span class="title">${this.title || ''}</span>
-	<span class="close" style="font-size: 24px; cursor: pointer;">&times</span>
+	<span class="close" style="font-size: 24px; cursor: pointer; margin-top: -5px;">&times</span>
 </div>`
 	}
 	body() {
