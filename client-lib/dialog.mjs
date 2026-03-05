@@ -10,7 +10,6 @@ let defaultOptions = {
 let defaultStyles = {
 	border: "solid 1px grey"
 	, "border-radius": "5px"
-	, "position": "relative"
 	, "min-width": "300px"
 	, "min-height": "300px"
 	, "display": "flex"
