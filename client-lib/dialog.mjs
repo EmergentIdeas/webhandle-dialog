@@ -29,6 +29,7 @@ export class Dialog extends View {
 		this.events = Object.assign({}, {
 			'click .title-bar .close': 'close',
 			'click .footer .cancel': 'cancel',
+			'cancel .': 'cancel',
 			'click .footer .okay': 'okay',
 		}, options.events)
 		options.events = this.events
