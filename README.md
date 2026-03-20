@@ -23,7 +23,7 @@ let managerDialog = await setupDialog(webhandle)
 ## Client Side
 
 ```js
-import {Dialog, FormAnswerDialog} from "@webhandle/dialog"
+import {Dialog, FormAnswerDialog, formValueInjector, gatherFormData} from "@webhandle/dialog"
 let dialog = new Dialog({
 	body: '<p>This is a notification.</p>'
 	, title: 'A notification!'
