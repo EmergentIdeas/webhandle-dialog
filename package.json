@@ -1,10 +1,10 @@
 {
   "name": "@webhandle/dialog",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "main": "client-lib/index.mjs",
   "scripts": {
-    "test": "run-webhandle ./test/test-server.mjs"
+    "test": "run-webhandle-inspect ./test/test-server.mjs"
     , "dev": "parallelshell 'run-webhandle-dev ./test/test-server.mjs' 'webpack-cli --watch --config dialog.webpack.cjs'"
   },
   "repository": {

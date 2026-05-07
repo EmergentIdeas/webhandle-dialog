@@ -22,6 +22,10 @@ let managerDialog = await setupDialog(webhandle)
 
 ## Client Side
 
+```html
+__::@webhandle/dialog/renderExternalResources__
+```
+
 ```js
 import {Dialog, FormAnswerDialog, formValueInjector, gatherFormData} from "@webhandle/dialog"
 let dialog = new Dialog({

@@ -1,4 +1,5 @@
 __::start__
+__::@webhandle/dialog/renderExternalResources__
 <div>
 	<button id="open-form">Open Form</button>	
 </div>

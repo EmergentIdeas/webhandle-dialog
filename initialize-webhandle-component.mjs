@@ -9,7 +9,7 @@ initializeWebhandleComponent.componentName = '@webhandle/dialog'
 initializeWebhandleComponent.componentDir = import.meta.dirname
 initializeWebhandleComponent.defaultConfig = {
 	"publicFilesPrefix": "/@webhandle/dialog/files"
-	, "provideResources": true
+	, "provideResources": false
 }
 
 initializeWebhandleComponent.setup = async function(webhandle, config) {
@@ -37,6 +37,20 @@ initializeWebhandleComponent.setup = async function(webhandle, config) {
 		}
 		externalResourceManager.provideResource(resource)
 	}
+	
+	manager.addExternalResources = function(externalResourceManager) {
+		manager.provideExternalResources(externalResourceManager)
+	}
+
+	webhandle.addTemplate(initializeWebhandleComponent.componentName + '/addExternalResources', (data) => {
+		let externalResourceManager = initializeWebhandleComponent.getExternalResourceManager(data)
+		manager.addExternalResources(externalResourceManager)
+	})
+	webhandle.addTemplate(initializeWebhandleComponent.componentName + '/renderExternalResources', (data) => {
+		let externalResourceManager = initializeWebhandleComponent.getExternalResourceManager(data)
+		manager.addExternalResources(externalResourceManager)
+		return externalResourceManager.render()
+	})
 	
 	if(config.provideResources) {
 		webhandle.routers.preDynamic.use((req, res, next) => {
