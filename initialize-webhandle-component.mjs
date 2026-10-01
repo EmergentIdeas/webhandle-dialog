@@ -65,7 +65,7 @@ initializeWebhandleComponent.setup = async function(webhandle, config) {
 			path.join(initializeWebhandleComponent.componentDir, dir),
 			{
 				urlPrefix: config.publicFilesPrefix
-				, fixedSetOfFiles: true
+				, fixedSetOfFiles: webhandle.development ? false : true
 			}
 		)
 	)

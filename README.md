@@ -77,6 +77,9 @@ showOkayButton
 styles
 : Styles applied to the dialog element.
 
+afterOpen
+: A function to run after the dialog has been opened and the form elements have been populated.
+
 
 ### Beyond the Options
 

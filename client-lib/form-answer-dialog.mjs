@@ -11,9 +11,13 @@ export class FormAnswerDialog extends Dialog {
 	 */
 	constructor(options) {
 		super(options)
+		if(this.afterOpen) {
+			this.userAfterOpen = this.afterOpen
+		}
+		this.afterOpen = this.formAfterOpen
 	}
 
-	afterOpen() {
+	formAfterOpen() {
 		super.afterOpen()
 		let body = this.el.querySelector('.body')
 		if (this.data) {
@@ -23,7 +27,9 @@ export class FormAnswerDialog extends Dialog {
 		if (firstInput) {
 			firstInput.focus()
 		}
-
+		if(this.userAfterOpen) {
+			this.userAfterOpen()
+		}
 	}
 	gatherData() {
 		let body = this.el.querySelector('.body')
